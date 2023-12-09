@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  expo-app:
+    build: .
+    ports:
+      - "19000:19000"
+    environment:
+      - EXPOSE_DEVTOOLS_PORT=19001
+    volumes:
+      - ./:/app
+
+volumes:
+  expo-app-data:
+
+networks:
+  default:
+    external: true
