@@ -22,7 +22,8 @@ const GetStarted = ({ navigation }) => {
                         <Text style={styles.title}>SafeRoad </Text>
                     </View>
                     <Text style={styles.description}>
-                    The cutting-edge app designed to revolutionize the way you manage and conserve water in your home. With Fluidux, you have the power to make a positive impact on both your utility bills and the environment, all through the convenience of your smartphone.
+                    The cutting-edge app designed to revolutionize the way you manage and conserve water in your home. With Fluidux, you have the power to make a positive impact on both your 
+                    utility bills and the environment, all through the convenience of your smartphone.
                     </Text>
                 </View>
                 <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Auth")}>

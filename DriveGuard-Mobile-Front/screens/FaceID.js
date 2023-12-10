@@ -6,7 +6,7 @@ import { Camera } from "expo-camera";
 
 const FaceID = ({ navigation }) => {
     const [hasPermission, setHasPermission] = useState(null);
-    const [type, setType] = useState(Camera.Constants.Type.back);
+    const [type, setType] = useState(Camera.Constants.Type.front);
     const [openCamera, setOpenCamera] = useState(false);
 
     useEffect(() => {
@@ -16,6 +16,7 @@ const FaceID = ({ navigation }) => {
         })();
     }, []);
 
+
     if (hasPermission === null) {
         return (
             <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -24,21 +25,11 @@ const FaceID = ({ navigation }) => {
         );
     }
 
-    const toggleCameraType = () => {
-        setType(
-            type === Camera.Constants.Type.back
-                ? Camera.Constants.Type.front
-                : Camera.Constants.Type.back
-        );
-    };
 
     if (openCamera) {
         return (
             <Camera style={{ flex: 1, aspectRatio: 3/5 }} type={type}>
                 <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.button} onPress={() => toggleCameraType()}>
-                        <Text style={styles.text}>Flip Camera</Text>
-                    </TouchableOpacity>
                 </View>
             </Camera>
         );

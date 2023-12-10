@@ -4,7 +4,7 @@ services:
   expo-app:
     build: .
     ports:
-      - "19000:19000"
+      - "19000:19001"
     environment:
       - EXPOSE_DEVTOOLS_PORT=19001
     volumes:
