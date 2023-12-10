@@ -38,7 +38,7 @@ userSchema.pre('save', async function(next) {
     next();
 });
 
-userSchema.pre('findOneAndUpdate', async function (next) {
+userSchema.pre('findOneAndUpdate', async function(next) {
     const update = this.getUpdate();
     const passwordField = update.password;
 

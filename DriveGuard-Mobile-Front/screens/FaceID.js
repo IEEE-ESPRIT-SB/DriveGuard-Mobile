@@ -73,8 +73,7 @@ const FaceID = ({navigation}) => {
                     LOCK<Text style={{color: colors.secondary}}>ID</Text>
                 </Text>
                 <Text style={styles.subTitle}>
-                    Lorem ipsum dolor sit amet consectetur. A nec eleifend proin laoreet sed
-                    volutpat ut scelerisque tortor. Urna enim don
+                    Scan your face to get access to your car and start driving.     
                 </Text>
             </View>
             <TouchableOpacity style={styles.button} onPress={() => setOpenCamera(true)}>

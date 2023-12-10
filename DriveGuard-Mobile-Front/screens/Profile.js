@@ -6,10 +6,10 @@ import {fontFamily} from "../GlobalStyles";
 const Profile = () => {
     const [image, setImage] = useState(null);
     const [editing, setEditing] = useState(false);
-    const [username, setUsername] = useState('Your Username');
+    const [username, setUsername] = useState('foulen fouleni');
     const [location, setlocation] = useState('Ariana, Tunisia');
     const [phonenumber, setphonenumber] = useState('+21651817281');
-    const [email, setemail] = useState('example@gmail.com');
+    const [email, setemail] = useState('foulen.fouleni@gmail.com');
     const [occupation, setoccupation] = useState('bus driver');
 
     const pickImage = async () => {

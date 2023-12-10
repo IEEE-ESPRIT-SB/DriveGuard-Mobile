@@ -4,6 +4,7 @@ import {StatusBar} from "expo-status-bar";
 import {SafeAreaView} from "react-native-safe-area-context";
 import DayCard from "../components/DayCard";
 import StatCard from "../components/StatCard";
+import { colors, fontFamily } from "../GlobalStyles"; // Import your colors here
 
 const Home = ({navigation}) => {
     const handleSquarePress = (day, number) => {
@@ -44,9 +45,9 @@ const Home = ({navigation}) => {
                 <Text style={styles.temperature}>Temperature</Text>
             </View>
             <View style={styles.imagesRow}>
-                <StatCard title={"Face ID"} value={"30°"} />
-                <StatCard title={"Face ID"} value={"30°"} />
-                <StatCard title={"Face ID"} value={"30°"} />
+                <StatCard title={"Temperature"} value={"30°"} />
+                <StatCard title={"Pressure"} value={"30°"} />
+                <StatCard title={"Humidity"} value={"30°"} />
                 {/*<Image source={require("../assets/cli.png")} style={styles.image}/>*/}
                 {/*<Image source={require("../assets/cardt.png")} style={styles.image}/>*/}
                 {/*<Image source={require("../assets/cli.png")} style={styles.image}/>*/}
@@ -55,6 +56,13 @@ const Home = ({navigation}) => {
                 <Image source={require("../assets/frame3.png")} style={styles.frameImage}/>
             </View>
             <View style={styles.background}></View>
+            <TouchableOpacity
+                style={styles.button}
+                onPress={() => navigation.navigate('FaceID')}
+            >
+                <Text style={styles.buttonText}>Camera</Text>
+
+            </TouchableOpacity>
         </SafeAreaView>
     );
 };
@@ -115,6 +123,11 @@ const styles = StyleSheet.create({
         // Ajoutez ici votre style pour le fond sans aucun élément
         // Par exemple : width: '100%', height: '100%', backgroundColor: 'votreCouleur', etc.
     },
+    buttonText: {
+        color: colors.white,
+        fontSize: 18,
+        fontFamily: fontFamily.semiBold600,
+      },
 });
 
 export default Home;

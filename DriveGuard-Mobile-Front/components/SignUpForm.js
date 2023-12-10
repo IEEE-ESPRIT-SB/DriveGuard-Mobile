@@ -37,19 +37,19 @@ const SignUpForm = ({navigation}) => {
                 <View style={styles.inputContainer}>
                     <Text style={styles.label}>Company</Text>
                     <TextInput
-                        placeholder="Password"
+                        placeholder="Company"
                         placeholderTextColor={colors.custom400}
                         style={[styles.input, {color: colors.custom400}]}
-                        secureTextEntry={true}
+                        
                     />
                 </View>
                 <View style={styles.inputContainer}>
                     <Text style={styles.label}>Driving license Type</Text>
                     <TextInput
-                        placeholder="Password"
+                        placeholder="Driving license Type"
                         placeholderTextColor={colors.custom400}
                         style={[styles.input, {color: colors.custom400}]}
-                        secureTextEntry={true}
+                        
                     />
                 </View>
             </View>

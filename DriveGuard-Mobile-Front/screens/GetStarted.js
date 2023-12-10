@@ -19,11 +19,10 @@ const GetStarted = ({ navigation }) => {
                 <View style={styles.descContainer}>
                     <View>
                         <Text style={styles.subtitle}>Welcome to</Text>
-                        <Text style={styles.title}>SafeRoad </Text>
+                        <Text style={styles.title}>Drive Guard</Text>
                     </View>
                     <Text style={styles.description}>
-                    The cutting-edge app designed to revolutionize the way you manage and conserve water in your home. With Fluidux, you have the power to make a positive impact on both your 
-                    utility bills and the environment, all through the convenience of your smartphone.
+                        Drive Guard is a mobile application using face detection, alerts and calls for emergencies if the driver is fatigued or distracted. It offers real-time weather data for personalized recommendations, enhancing road safety and driver well-being.
                     </Text>
                 </View>
                 <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Auth")}>
