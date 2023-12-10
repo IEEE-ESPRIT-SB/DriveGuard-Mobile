@@ -1,17 +1,19 @@
-import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { colors, fontFamily, fontSize } from "../GlobalStyles";
+import {Image, Pressable, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {colors, fontFamily, fontSize} from "../GlobalStyles";
 import face from "../assets/face.png";
-import { useState, useEffect } from "react";
-import { Camera } from "expo-camera";
+import {useEffect, useState} from "react";
+import {Camera} from "expo-camera";
+import {Ionicons} from "@expo/vector-icons";
+import * as FaceDetector from "expo-face-detector";
 
-const FaceID = ({ navigation }) => {
+const FaceID = ({navigation}) => {
     const [hasPermission, setHasPermission] = useState(null);
-    const [type, setType] = useState(Camera.Constants.Type.front);
+    const [type] = useState(Camera.Constants.Type.front);
     const [openCamera, setOpenCamera] = useState(false);
 
     useEffect(() => {
         (async () => {
-            const { status } = await Camera.requestCameraPermissionsAsync();
+            const {status} = await Camera.requestCameraPermissionsAsync();
             setHasPermission(status === "granted");
         })();
     }, []);
@@ -19,28 +21,56 @@ const FaceID = ({ navigation }) => {
 
     if (hasPermission === null) {
         return (
-            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
                 <Text>No access to camera</Text>
             </View>
         );
     }
 
+    const handleFacesDetected = ({faces}) => {
+        if (faces.length > 0) {
+            setOpenCamera(false)
+            navigation.navigate("ApprFaceID");
+        }
+    }
 
-    if (openCamera) {
+    const DeclineAccess = () => {
+        setOpenCamera(false)
+        navigation.navigate("DecFaceID");
+    }
+
+    if (openCamera && hasPermission) {
         return (
-            <Camera style={{ flex: 1, aspectRatio: 3/5 }} type={type}>
-                <View style={styles.buttonContainer}>
-                </View>
+            <Camera
+                type={type}
+                onFacesDetected={handleFacesDetected}
+                faceDetectorSettings={{
+                    mode: FaceDetector.FaceDetectorMode.fast,
+                    detectLandmarks: FaceDetector.FaceDetectorLandmarks.none,
+                    runClassifications: FaceDetector.FaceDetectorClassifications.none,
+                    minDetectionInterval: 100,
+                    tracking: true,
+                }}
+
+                style={{flex: 1, justifyContent: "space-between"}}
+            >
+                <Pressable style={styles.buttonContainer} onPress={() => setOpenCamera(false)}>
+                    <Ionicons name="return-down-back" size={52} color="white"/>
+                </Pressable>
+                <Pressable style={[styles.button, {marginBottom: 40, alignSelf: "center"}]}
+                           onPress={DeclineAccess}>
+                    <Text style={styles.buttonText}>GET ACCESS</Text>
+                </Pressable>
             </Camera>
         );
     }
 
     return (
         <View style={styles.container}>
-            <Image source={face} style={styles.image} />
-            <View style={{ flexDirection: "column", gap: 15 }}>
+            <Image source={face} style={styles.image}/>
+            <View style={{flexDirection: "column", gap: 15}}>
                 <Text style={styles.title}>
-                    LOCK<Text style={{ color: colors.secondary }}>ID</Text>
+                    LOCK<Text style={{color: colors.secondary}}>ID</Text>
                 </Text>
                 <Text style={styles.subTitle}>
                     Lorem ipsum dolor sit amet consectetur. A nec eleifend proin laoreet sed
@@ -98,10 +128,8 @@ const styles = StyleSheet.create({
 
     },
     buttonContainer: {
-        flex: 1,
-        backgroundColor: 'transparent',
-        flexDirection: 'row',
-        margin: 20,
+        marginVertical: 30,
+        marginLeft: 20,
     },
 })
 export default FaceID;

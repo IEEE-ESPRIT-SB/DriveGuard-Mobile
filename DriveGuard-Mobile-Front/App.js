@@ -16,6 +16,7 @@ import {
     Montserrat_900Black,
     useFonts
 } from "@expo-google-fonts/montserrat";
+import {FaceID} from "./screens";
 
 export default function App() {
     const Stack = createStackNavigator();
@@ -42,7 +43,7 @@ export default function App() {
                 <Stack.Navigator screenOptions={{
                     headerShown: false
                 }}>
-                    {/* <Stack.Screen name="AuthStack" component={AuthStack}/> */}
+                    <Stack.Screen name="AuthStack" component={AuthStack}/>
                     <Stack.Screen name="MainStack" component={MainStack}/>
                 </Stack.Navigator>
             </NavigationContainer>

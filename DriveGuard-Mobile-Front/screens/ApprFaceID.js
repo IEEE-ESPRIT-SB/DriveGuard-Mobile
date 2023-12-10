@@ -13,7 +13,7 @@ import face from "../assets/face.png";
 import { useState, useEffect } from "react";
 import { Feather } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-const FaceIDacc = ({ navigation }) => {
+const ApprFaceID = ({ navigation }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const rotationValue = new Animated.Value(0);
@@ -31,10 +31,10 @@ const FaceIDacc = ({ navigation }) => {
       easing: Easing.linear,
       useNativeDriver: false,
     }).start();
-    navigation.navigate("FaceID", {
-      retry: true,
-      test: "test",
-    });
+    // navigation.navigate("FaceID", {
+    //   retry: true,
+    //   test: "test",
+    // });
     // return () =>
   }, [isPressed, rotationValue]);
 
@@ -46,7 +46,7 @@ const FaceIDacc = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image source={face} style={styles.image} />
-      
+
       <View style={{ flexDirection: "column", gap: 50, alignItems: "center" }}>
         <View style={styles.content}>
           <Feather name="check-circle" size={64} color={colors.secondary} />
@@ -68,6 +68,9 @@ const FaceIDacc = ({ navigation }) => {
             </Text>
           </View>
         </View>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("MainStack")}>
+            <Text style={styles.buttonText}>GET ACCESS</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -86,8 +89,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     gap: 20,
     alignItems: "center",
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingHorizontal: 50,
+    paddingVertical: 40,
     borderRadius: 30,
   },
   image: {
@@ -131,4 +134,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FaceIDacc;
+export default ApprFaceID;

@@ -1,21 +1,26 @@
-# Use the official Node image with a specific version
-FROM node:18-alpine
+# Use an official Node.js 18 image as the base image
+FROM node:18
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the container
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application code to the container
+# Install Expo CLI globally
+RUN npm install -g expo-cli
+
+# Set CI environment variable to bypass interactive prompts
+ENV CI=1
+
+# Copy the entire application to the container
 COPY . .
 
-# Expose the port used by your React Native app
+# Expose the port that Expo will run on
 EXPOSE 19000
-EXPOSE 19001
 
-# Start the React Native packager
-CMD ["npm", "start"]
+# Start Expo on the specified network without waiting for http://localhost:8081
+CMD ["npm", "start", "--", "--tunnel"]

@@ -13,7 +13,7 @@ import face from "../assets/face.png";
 import { useState, useEffect } from "react";
 import { Feather } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-const FaceIDdecl = ({ navigation }) => {
+const DecFaceID = ({ navigation }) => {
   const [isPressed, setIsPressed] = useState(false);
 
   const rotationValue = new Animated.Value(0);
@@ -25,19 +25,20 @@ const FaceIDdecl = ({ navigation }) => {
 
   useEffect(() => {
     // Rotate animation
-    Animated.timing(rotationValue, {
-      toValue: 1,
-      duration: 500,
-      easing: Easing.linear,
-      useNativeDriver: false,
-    }).start();
-    
-   setTimeout(() => {
-      navigation.navigate("FaceID", {
-        retry: true,
-        test: "test",
-      });
-   }, 500);
+    if (isPressed) {
+      Animated.timing(rotationValue, {
+        toValue: 1,
+        duration: 500,
+        easing: Easing.linear,
+        useNativeDriver: false,
+      }).start();
+
+      setTimeout(() => {
+        navigation.navigate("FaceID", {
+          retry: true
+        });
+      }, 500);
+    }
   }, [isPressed, rotationValue]);
 
   const spin = rotationValue.interpolate({
@@ -138,4 +139,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FaceIDdecl;
+export default DecFaceID;

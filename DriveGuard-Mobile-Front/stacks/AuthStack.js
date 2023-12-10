@@ -1,5 +1,5 @@
 import {createStackNavigator} from "@react-navigation/stack";
-import {Auth, FaceID, GetStarted} from "../screens";
+import {ApprFaceID, Auth, DecFaceID, FaceID, GetStarted} from "../screens";
 
 
 const AuthStack = () => {
@@ -13,6 +13,8 @@ const AuthStack = () => {
             <Stack.Screen name="GetStarted" component={GetStarted}/>
             <Stack.Screen name="Auth" component={Auth}/>
             <Stack.Screen name="FaceID" component={FaceID}/>
+            <Stack.Screen name="ApprFaceID" component={ApprFaceID}/>
+            <Stack.Screen name="DecFaceID" component={DecFaceID}/>
         </Stack.Navigator>
     );
 }
