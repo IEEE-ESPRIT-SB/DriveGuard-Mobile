@@ -13,9 +13,6 @@ RUN npm install
 # Install Expo CLI globally
 RUN npm install -g expo-cli
 
-# Set CI environment variable to bypass interactive prompts
-ENV CI=1
-
 # Copy the entire application to the container
 COPY . .
 
@@ -23,4 +20,4 @@ COPY . .
 EXPOSE 19000
 
 # Start Expo on the specified network without waiting for http://localhost:8081
-CMD ["npm", "start", "--", "--tunnel"]
+CMD ["npm", "start"]

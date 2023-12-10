@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  driveguard-mobile-front:
+    build: ./DriveGuard-Mobile-Front
+    ports:
+      - "19000:19000"
+      - "19001:19001"
+      - "19002:19002"
+      - "19006:19006"
+    volumes:
+      - driveguard-mobile-front:/app
+    environment:
+      - ANDROID_HOME=C:\Users\habib\AppData\Local\Android\Sdk
+
+  driveguard-mobile-backend-user:
+    build: ./DriveGuard-Mobile-Backend-User
+    ports:
+      - "3500:3500"
+    volumes:
+      - ./DriveGuard-Mobile-Backend-User:/app
+    depends_on:
+      - driveguard-mobile-front
+    environment:
+      - NODE_ENV=development
+      - PORT=3500
+      - HOST=
+      - MONGO_URI=mongodb://127.0.0.1:27017/DriveGuard
+      - JWT_SECRET=ae157a3a60ef100d8028d342e772b7719ca7dc312a624236a47ab5fa3470aea59b5e56680c2937043c699bca43e433d1d5e7a5d741a12315722bbfbd2654a2c1
+      - SALT=10
+
+volumes:
+  driveguard-mobile-front:
+  driveguard-mobile-backend-user:
