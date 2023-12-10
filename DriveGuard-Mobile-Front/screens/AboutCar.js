@@ -2,7 +2,7 @@ import {View, Text} from "react-native";
 
 const AboutCar= ({ navigation }) => {
     return (
-        <View style={styles.container}>
+        <View>
             <Text>AboutCar</Text>
         </View>
     );

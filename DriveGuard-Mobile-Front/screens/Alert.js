@@ -2,7 +2,7 @@ import {View, Text} from "react-native";
 
 const Alert = ({ navigation }) => {
     return (
-        <View style={styles.container}>
+        <View >
             <Text>Alert</Text>
         </View>
     );

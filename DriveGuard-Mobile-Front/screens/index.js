@@ -4,6 +4,9 @@ import Auth from "./Auth";
 import FaceID from "./FaceID";
 import Home from "./Home";
 import Profile from "./Profile";
+import notif from "./notif";
+import FaceIDacc from "./FaceIDacc";
+import FaceIDdecl from "./FaceIDdecl";
 import GetStarted from "./GetStarted";
 import SignInForm from "../components/SignInForm";
 import SignUpForm from "../components/SignUpForm";
@@ -18,5 +21,8 @@ SignUpForm,
     FaceID,
     Home,
     Profile,
-    GetStarted
+    GetStarted,
+    FaceIDdecl,
+    notif,
+    FaceIDacc,
 }

@@ -6,6 +6,7 @@ export const colors = {
     custom300: "#246170",
     custom400: "#09404D",
     custom500: "#062830",
+    red: "#D64859",
     white: "#fff"
 }
 
