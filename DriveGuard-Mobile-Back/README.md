@@ -33,6 +33,20 @@ The main functionality revolves around the `/detect` endpoint, which receives an
    - Send a POST request to `/detect` with an attached image file.
    - Receive a JSON response indicating whether the person in the image is drowsy or not, along with the calculated eye aspect ratio.
 
+## Steps Taken
+
+1. **Flask Server Initialization**:
+   - Set up the Flask application and started the server to listen for incoming requests.
+   ![Flask Server Initialization](C:/Users/fatha/OneDrive/Desktop/1.jpg)
+
+2. **Image Upload and JSON Response via Postman**:
+   - Utilized Postman to send an image file to the `/detect` endpoint and received a JSON response indicating drowsiness status.
+   ![Image Upload and JSON Response via Postman](C:/Users/fatha/OneDrive/Desktop/1.jpg)
+
+3. **CMD Server Request Details**:
+   - Viewed and analyzed the request details in the command-line server upon receiving the request sent from Postman.
+   ![CMD Server Request Details](C:/Users/fatha/OneDrive/Desktop/1.jpg)
+
 ## Results and Conclusion
 
 This implementation analyzes uploaded images for drowsiness by examining the eye aspect ratio of detected faces. The accuracy of drowsiness detection may vary based on the input image quality, the threshold (`thresh`), and the individual's eye characteristics.
