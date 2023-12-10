@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-The Safe Roads Initiative aims to address global challenges related to road accidents and car thefts using a combination of AI, Computer Vision, Machine Learning, and IoT technologies. The project introduces a connected anti-theft bar with advanced features to enhance vehicle security and promote driver safety.
+The Drive Guardians aims to address global challenges related to road accidents and car thefts using a combination of AI, Computer Vision, Machine Learning, and IoT technologies. The project introduces a connected anti-theft bar with advanced features to enhance vehicle security and promote driver safety.
 
 ### Project Overview
 
@@ -17,7 +17,7 @@ In 2021, an estimated 2,497,657 people were injured in police-reported traffic c
 
 ## Proposed Solution
 
-The Safe Roads Initiative combines the anti-theft bar with advanced features and a mobile application for comprehensive security and driver safety. The project integrates IoT, AI, and Computer Vision technologies to provide real-time data, diagnostics, and emergency features.
+The Drive Guardians  combines the anti-theft bar with advanced features and a mobile application for comprehensive security and driver safety. The project integrates IoT, AI, and Computer Vision technologies to provide real-time data, diagnostics, and emergency features.
 
 ### Features
 
@@ -28,7 +28,7 @@ The Safe Roads Initiative combines the anti-theft bar with advanced features and
 
 ## How to Run the Application
 
-To effectively run the Safe Roads Initiative application, follow these steps:
+To effectively run the Drive Guardians  application, follow these steps:
 
 ### 1. Run the Backend-User
 
@@ -81,7 +81,7 @@ To effectively run the Safe Roads Initiative application, follow these steps:
 5. Open the application on your mobile device or emulator and follow the authentication steps as prompted.
 
 ### Note
-- Make sure both the backend-user and frontend applications are running simultaneously for the complete functionality of the Safe Roads Initiative.
+- Make sure both the backend-user and frontend applications are running simultaneously for the complete functionality of the Drive Guardians .
 
 ## Technologies Used
 
