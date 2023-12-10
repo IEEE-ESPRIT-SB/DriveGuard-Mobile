@@ -60,11 +60,11 @@ Explore and interact with the following API routes to manage users and authentic
 - **Endpoint**: `POST http://localhost:3500/user/login`
 - **Request Body**: JSON object with user credentials (email, password)
 
-##### 7. Ban User (Only for Doctor Role)
+##### 7. Ban User (Only for admin Role)
 
 - **Endpoint**: `PUT http://localhost:3500/user/ban/:id`
 - **Replace** `:id` with the actual user ID
-- **Authorization**: Include a valid JWT token for a user with the 'Doctor' role in the request headers
+- **Authorization**: Include a valid JWT token for a user with the 'admin' role in the request headers
 
 Feel free to use Postman or your preferred API testing tool to test these routes.
 
@@ -162,7 +162,7 @@ The `auth` middleware function is responsible for verifying the authenticity of 
 
 ### isAdmin
 
-The `isAdmin` middleware function checks if the authenticated user has the 'admin' or 'Doctor' role. If the user has either of these roles, the function allows access by proceeding to the next middleware in the stack. Otherwise, it returns a 401 Unauthorized response with a message indicating insufficient privileges.
+The `isAdmin` middleware function checks if the authenticated user has the 'admin'  role. If the user has either of these roles, the function allows access by proceeding to the next middleware in the stack. Otherwise, it returns a 401 Unauthorized response with a message indicating insufficient privileges.
 
 
 
