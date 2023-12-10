@@ -37,15 +37,15 @@ The main functionality revolves around the `/detect` endpoint, which receives an
 
 1. **Flask Server Initialization**:
    - Set up the Flask application and started the server to listen for incoming requests.
-   ![Flask Server Initialization](C:/Users/fatha/OneDrive/Desktop/1.jpg)
+   ![Flask Server Initialization](assets/1.jpg)
 
 2. **Image Upload and JSON Response via Postman**:
    - Utilized Postman to send an image file to the `/detect` endpoint and received a JSON response indicating drowsiness status.
-   ![Image Upload and JSON Response via Postman](C:/Users/fatha/OneDrive/Desktop/1.jpg)
+   ![Image Upload and JSON Response via Postman](assets/2.jpg)
 
 3. **CMD Server Request Details**:
    - Viewed and analyzed the request details in the command-line server upon receiving the request sent from Postman.
-   ![CMD Server Request Details](C:/Users/fatha/OneDrive/Desktop/1.jpg)
+   ![CMD Server Request Details](assets/3.jpg)
 
 ## Results and Conclusion
 
