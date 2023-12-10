@@ -1,4 +1,4 @@
-# Drive Guardian Backendn
+# Drive Guardian Backend
 
 Welcome to the Drive Guardian user authentication backend repository – the central hub for security functionalities within the Drive Guardian application.
 ## Project Overview
